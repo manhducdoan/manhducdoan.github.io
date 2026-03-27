@@ -16,7 +16,7 @@ My research interests mainly focus on microeconomics, spanning various topics in
 <div class="news-list">
   <div class="news-item">
     <span class="news-date">January 2025</span>
-    <span class="news-text">Graduated from Foreign Trade University with High Distinction (President's List).</span>
+    <span class="news-text">Graduated from Foreign Trade University with High Distinction.</span>
   </div>
   <div class="news-item">
     <span class="news-date">July 2024</span>
