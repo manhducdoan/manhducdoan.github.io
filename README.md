@@ -1,6 +1,6 @@
 # Manh-Duc Doan — Personal Academic Website
 
-Personal academic website of Manh-Duc Doan, Research Assistant at DEPOCEN and for Professors Quoc-Anh Do (Monash University) & Kieu-Trang Nguyen (University of Melbourne).
+Personal academic website of Manh-Duc Doan.
 
 **Live site:** [https://ducdoan03.github.io](https://ducdoan03.github.io)
 
