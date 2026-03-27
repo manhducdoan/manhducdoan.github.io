@@ -38,12 +38,12 @@ permalink: /research/
 
 <div class="paper">
   <div class="paper-title">Tobacco Market Pricing Strategies Ahead of Tax Adjustment: Evidence from A Unique Retail Price Survey</div>
-  <div>with Ngoc-Minh Nguyen, Tuong-Vy Phan, Ha-My Bui, Huy Le, and Anh Nguyen</div>
+  <div>(with Ngoc-Minh Nguyen, Tuong-Vy Phan, Ha-My Bui, Huy Le, and Anh Nguyen)</div>
   <div class="paper-venue"><em>Submitted to Tobacco Control</em></div>
 </div>
 
 <div class="paper">
   <div class="paper-title">Illicit Tobacco Consumption: Tax Increase and Brand Switching Behavior</div>
-  <div>with Ngoc-Minh Nguyen and Anh Nguyen</div>
+  <div>(with Ngoc-Minh Nguyen and Anh Nguyen)</div>
 </div>
 
