@@ -27,7 +27,7 @@ My research interests mainly focus on microeconomics, spanning various topics in
     <span class="news-text">Started RA position for Professors Quoc-Anh Do & Kieu-Trang Nguyen.</span>
   </div>
   <div class="news-item">
-    <span class="news-date">March 2023</span>
+    <span class="news-date">March 2024</span>
     <span class="news-text">Started working as Research Intern at DEPOCEN.</span>
   </div>
 </div>
