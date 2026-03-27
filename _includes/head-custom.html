@@ -1,9 +1,440 @@
-<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<!-- start custom head snippets -->
 
-<!-- Setup Google Analytics -->
 {% include head-custom-google-analytics.html %}
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
+<!-- <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"> -->
+
+<!-- Google Fonts: Libre Baskerville (headings) + Source Sans 3 (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ── Theme variables ────────────────────────────────── */
+  :root, [data-theme="light"] {
+    --bg:         #ffffff;
+    --bg-nav:     #fafbfc;
+    --text:       #1a1a1a;
+    --text-muted: #4a5568;
+    --link:       #1d4e89;
+    --link-hover: #2b6cb0;
+    --border:     #e2e8f0;
+    --border-lt:  #f0f0f0;
+    --hover-bg:   #edf2f9;
+    --icon-bg:    #ffffff;
+    --shadow:     rgba(0,0,0,0.10);
+  }
+
+  [data-theme="dark"] {
+    --bg:         #0f1117;
+    --bg-nav:     #161b27;
+    --text:       #e2e8f0;
+    --text-muted: #94a3b8;
+    --link:       #7eb8f7;
+    --link-hover: #a8cffc;
+    --border:     #2d3748;
+    --border-lt:  #1e2533;
+    --hover-bg:   #1e2a3a;
+    --icon-bg:    #1a2235;
+    --shadow:     rgba(0,0,0,0.40);
+  }
+
+  /* ── Smooth scroll ──────────────────────────────────── */
+  html { scroll-behavior: smooth; }
+
+  /* ── Global typography & color ──────────────────────── */
+  body {
+    font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 16.5px !important;
+    color: var(--text) !important;
+    background: var(--bg) !important;
+    padding-top: 52px !important;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Libre Baskerville', Georgia, serif !important;
+    color: var(--text) !important;
+    font-weight: 700 !important;
+  }
+
+  a {
+    color: var(--link) !important;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  a:hover, a:focus {
+    color: var(--link-hover) !important;
+    font-weight: inherit;
+  }
+
+  section a:hover, section a:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  p, ul, ol, li, td, th, small {
+    color: var(--text);
+  }
+
+  hr {
+    border: none !important;
+    background: none !important;
+    height: 0 !important;
+    margin: 28px 0 !important;
+  }
+
+  /* ── Top navigation bar ─────────────────────────────── */
+  .topnav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--bg-nav);
+    border-bottom: 1px solid var(--border);
+    height: 52px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .topnav-inner {
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .topnav-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text) !important;
+    letter-spacing: 0.01em;
+  }
+
+  .topnav-links {
+    list-style: none;
+    margin: 0; padding: 0;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+
+  .topnav-links li a {
+    display: block;
+    padding: 6px 14px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    color: var(--text-muted) !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    font-weight: 400;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .topnav-links li a:hover,
+  .topnav-links li a:focus {
+    background: var(--hover-bg);
+    color: var(--link) !important;
+    text-decoration: none !important;
+  }
+
+  .topnav-links li a.active {
+    color: var(--link) !important;
+    font-weight: 600;
+  }
+
+  /* ── Dark mode toggle button ────────────────────────── */
+  .dark-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--icon-bg);
+    color: var(--text-muted);
+    font-size: 13px;
+    cursor: pointer;
+    margin-left: 6px;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+  }
+
+  .dark-toggle:hover {
+    background: var(--hover-bg);
+    border-color: var(--link);
+    color: var(--link);
+  }
+
+  /* ── Main layout ────────────────────────────────────── */
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1020px;
+    margin: 0 auto;
+    padding: 44px 28px;
+    gap: 56px;
+  }
+
+  /* ── Sidebar (header) ───────────────────────────────── */
+  header {
+    width: 220px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 72px;
+    float: none !important;
+  }
+
+  .profile-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 0 2px 12px var(--shadow);
+  }
+
+  .site-name {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin: 0 0 14px !important;
+    line-height: 1.25 !important;
+  }
+
+  .tagline {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-top: 10px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ── Social icon row ────────────────────────────────── */
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--text-muted) !important;
+    font-size: 14px;
+    text-decoration: none !important;
+    background: var(--icon-bg);
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .social-icon:hover, .social-icon:focus {
+    border-color: var(--link);
+    color: var(--link) !important;
+    background: var(--hover-bg);
+    text-decoration: none !important;
+  }
+
+  /* ── Content (section) ──────────────────────────────── */
+  section {
+    flex: 1;
+    min-width: 0;
+    float: none !important;
+    width: auto !important;
+    padding-bottom: 60px;
+  }
+
+  section h2 {
+    font-family: 'Source Sans 3', sans-serif !important;
+    font-size: 1.05rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    padding-bottom: 8px;
+    margin-top: 36px !important;
+    margin-bottom: 20px !important;
+  }
+
+  section h2:first-child { margin-top: 0 !important; }
+
+  section h3 {
+    font-family: 'Libre Baskerville', Georgia, serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    color: var(--text) !important;
+    margin-top: 28px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* ── News timeline ──────────────────────────────────── */
+  .news-list { display: flex; flex-direction: column; gap: 0; }
+
+  .news-item {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border-lt);
+    align-items: baseline;
+  }
+
+  .news-item:last-child { border-bottom: none; }
+
+  .news-date {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .news-text { font-size: 0.95rem; color: var(--text); line-height: 1.5; }
+
+  /* ── Footer ─────────────────────────────────────────── */
+  footer.site-footer {
+    width: 100%;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 18px 28px;
+    float: none !important;
+    position: static !important;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg);
+    transition: background 0.2s;
+  }
+
+  footer.site-footer a { color: var(--text-muted) !important; text-decoration: none !important; }
+  footer.site-footer a:hover { color: var(--link) !important; text-decoration: underline !important; }
+
+  /* ── Pre-doc note ───────────────────────────────────── */
+  .pre-doc-note {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: -8px !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* ── Research paper cards ───────────────────────────── */
+  .paper {
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .paper:last-child { border-bottom: none; }
+
+  .paper-title {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-weight: 700;
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .paper-venue {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-top: 4px;
+  }
+
+  .paper-links { margin-top: 8px; }
+
+  .paper-links a {
+    font-size: 0.78rem;
+    margin-right: 8px;
+    padding: 3px 10px;
+    border: 1.5px solid var(--link);
+    border-radius: 4px;
+    color: var(--link) !important;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .paper-links a:hover { background: var(--link); color: var(--bg) !important; }
+
+  /* ── Blog post list ─────────────────────────────────── */
+  .post-list { list-style: none; padding: 0; }
+
+  .post-list li { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .post-list li:last-child { border-bottom: none; }
+
+  .post-list .post-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    display: block;
+    margin-top: 4px;
+  }
+
+  /* ── External link icon in nav ──────────────────────── */
+  .nav-ext-icon {
+    font-size: 0.6em;
+    margin-left: 4px;
+    vertical-align: middle;
+    opacity: 0.6;
+  }
+
+  /* ── News item hover ────────────────────────────────── */
+  .news-item {
+    border-radius: 5px;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-left: -6px;
+    margin-right: -6px;
+    transition: background 0.15s;
+  }
+
+  .news-item:hover { background: var(--hover-bg); }
+
+  /* ── Responsive ─────────────────────────────────────── */
+  @media (max-width: 760px) {
+    .wrapper { flex-direction: column; padding: 24px 18px; gap: 28px; }
+
+    header {
+      width: 100%;
+      position: static;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    /* #6 — profile photo fits mobile */
+    .profile-photo {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .topnav-name { display: none; }
+    .news-item { grid-template-columns: 70px 1fr; }
+
+    /* #5 — active indicator on mobile */
+    .topnav-links li a.active {
+      background: var(--hover-bg);
+      font-weight: 600;
+    }
+  }
+</style>
 
 <!-- end custom head snippets -->

@@ -1,6 +1,27 @@
-title: Minimal theme
-logo: /assets/img/logo.png
-description: Minimal is a theme for GitHub Pages.
-show_downloads: true
+title: Manh-Duc Doan
+description: Research Assistant at DEPOCEN | International Economics
+author: Manh-Duc Doan
+email: manhduc.doan03@gmail.com
+logo: /assets/img/profile.jpeg
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-minimal
+
+# Social links (leave blank to hide)
+social:
+  email: manhduc.doan03@gmail.com
+  scholar: "https://scholar.google.com/citations?user=VdXwfiYAAAAJ&hl=en"
+  twitter: ""
+  linkedin: ""
+  github: "https://github.com/ducdoan03"
+
+nav:
+  - title: Home
+    url: /
+  - title: Research
+    url: /research
+  - title: CV
+    url: https://www.dropbox.com/scl/fi/08mz8tyemxzvn8xn9yzfe/DOAN-Manh-Duc_CV.pdf?rlkey=jsk7jekkdjhx7luwfw158esdt&e=2&st=j4r0nec5&dl=0
+    external: true
+  - title: Blog
+    url: /blog
