@@ -2,7 +2,7 @@
 
 Personal academic website of Manh-Duc Doan.
 
-**Live site:** [https://ducdoan03.github.io](https://ducdoan03.github.io)
+**Live site:** [https://manhducdoan.github.io](https://manhducdoan.github.io)
 
 ---
 
@@ -10,7 +10,7 @@ Personal academic website of Manh-Duc Doan.
 
 | Page | Description |
 |------|-------------|
-| `/` | Home — bio, news timeline, contact |
+| `/home` | Home — bio, news timeline, contact |
 | `/research` | Publications and working papers |
 | `/cv` | Links to full CV PDF |
 | `/blog` | Blog posts |
