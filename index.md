@@ -7,7 +7,7 @@ title: Home
 
 I am a Research Assistant (RA) at the Development and Policies Research Center (DEPOCEN). I also work as a RA for Professors Quoc-Anh Do (Monash University) and Kieu-Trang Nguyen (University of Melbourne) after worked with Professor Do Ngoc Kien (FTU).
 
-I hold a B.A. in International Economics from Foreign Trade University (FTU), Vietnam. I hope to pursue graduate studies in Economics.
+I hold a B.A. in International Economics from Foreign Trade University (FTU), Vietnam. I'm looking for the Master's Program/Pre-doc in Economics in the 26/27 a/y.
 
 My research interests mainly focus on microeconomics, spanning various topics in political economy, labor and education, development, and organizational economics.
 
